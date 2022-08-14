@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom/client';
-import { createGlobalStyle, ThemeProvider } from 'styled-components';
+import { createGlobalStyle, DefaultTheme, ThemeProvider } from 'styled-components';
 import { Normalize } from 'styled-normalize';
 // @ts-ignore
 import LighthausEot from '../src/fonts/Lighthaus/Lighthaus.eot';
@@ -15,7 +15,7 @@ import CenturyGothicWoff from '../src/fonts/CenturyGothic/CenturyGothic.woff';
 import CenturyGothicTtf from '../src/fonts/CenturyGothic/CenturyGothic.ttf';
 import App from './App';
 
-const theme = {
+const theme: DefaultTheme = {
   fonts: {
     mainFont: 'CenturyGothic',
     titleFont: 'Lighthaus',
@@ -26,6 +26,7 @@ const theme = {
     gray: '#848484',
     white: '#ffff',
     brown: '#C9814F',
+    browner: '#AF632D',
   },
   media: {
     phone: '(max-width: 425px)',
@@ -76,6 +77,7 @@ const GlobalStyles = createGlobalStyle`
     font-size: 100%;
     font: inherit;
     vertical-align: baseline;
+    box-sizing: border-box;
   }
   /* HTML5 display-role reset for older browsers */
   article, aside, details, figcaption, figure, 
@@ -130,7 +132,17 @@ const GlobalStyles = createGlobalStyle`
     transition: ${theme.other.time}
   }
 
+  img {
+    width: 100%;
+    height: 100%
+  }
+
+  button {
+    cursor: pointer;
+  }
+
   .container {
+    position: relative;
     max-width: 1440px;
     margin: 0 auto;
     padding: 0 40px;
