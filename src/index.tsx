@@ -1,19 +1,19 @@
-import ReactDOM from 'react-dom/client';
-import { createGlobalStyle, DefaultTheme, ThemeProvider } from 'styled-components';
-import { Normalize } from 'styled-normalize';
+import ReactDOM from 'react-dom/client'
+import { createGlobalStyle, DefaultTheme, ThemeProvider } from 'styled-components'
+import { Normalize } from 'styled-normalize'
 // @ts-ignore
-import LighthausEot from '../src/fonts/Lighthaus/Lighthaus.eot';
+import LighthausEot from '../src/fonts/Lighthaus/Lighthaus.eot'
 // @ts-ignore
-import LighthausWoff from '../src/fonts/Lighthaus/Lighthaus.woff';
+import LighthausWoff from '../src/fonts/Lighthaus/Lighthaus.woff'
 // @ts-ignore
-import LighthausTtf from '../src/fonts/Lighthaus/Lighthaus.ttf';
+import LighthausTtf from '../src/fonts/Lighthaus/Lighthaus.ttf'
 // @ts-ignore
-import CenturyGothicEot from '../src/fonts/CenturyGothic/CenturyGothic.eot';
+import CenturyGothicEot from '../src/fonts/CenturyGothic/CenturyGothic.eot'
 // @ts-ignore
-import CenturyGothicWoff from '../src/fonts/CenturyGothic/CenturyGothic.woff';
+import CenturyGothicWoff from '../src/fonts/CenturyGothic/CenturyGothic.woff'
 // @ts-ignore
-import CenturyGothicTtf from '../src/fonts/CenturyGothic/CenturyGothic.ttf';
-import App from './App';
+import CenturyGothicTtf from '../src/fonts/CenturyGothic/CenturyGothic.ttf'
+import App from './App'
 
 const theme: DefaultTheme = {
   fonts: {
@@ -35,7 +35,7 @@ const theme: DefaultTheme = {
   other: {
     time: 'all 0.3s ease-in-out',
   },
-};
+}
 
 const GlobalStyles = createGlobalStyle`
   @font-face {
@@ -119,6 +119,7 @@ const GlobalStyles = createGlobalStyle`
   
   h1 {
     font-size: 64px;
+    line-height: 170%;
   }
 
   h2 {
@@ -148,13 +149,13 @@ const GlobalStyles = createGlobalStyle`
     padding: 0 40px;
   }
 
-`;
+`
 
-const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
+const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
   <ThemeProvider theme={theme}>
     <Normalize />
     <GlobalStyles />
     <App />
   </ThemeProvider>,
-);
+)

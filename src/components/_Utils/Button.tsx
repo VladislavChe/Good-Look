@@ -1,12 +1,15 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from 'react'
+import styled from 'styled-components'
 
 type StyledProps = {
-  uppercase: boolean;
-  marginTop: string;
-};
+  uppercase: boolean
+  marginTop: string
+}
 
 const StyledButton = styled.button<StyledProps>`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 19px 22px;
   margin-top: ${(props) => props.marginTop};
 
@@ -27,12 +30,12 @@ const StyledButton = styled.button<StyledProps>`
     background: ${(props) => props.theme.colors.browner};
     border: 1px solid ${(props) => props.theme.colors.browner};
   }
-`;
+`
 
 interface BtnProps {
-  btnText: string;
-  uppercase: boolean;
-  marginTop: string;
+  btnText: string
+  uppercase: boolean
+  marginTop: string
 }
 
 const Button: React.FC<BtnProps> = ({ btnText, uppercase, marginTop }) => {
@@ -42,7 +45,7 @@ const Button: React.FC<BtnProps> = ({ btnText, uppercase, marginTop }) => {
         {btnText}
       </StyledButton>
     </>
-  );
-};
+  )
+}
 
-export default Button;
+export default Button

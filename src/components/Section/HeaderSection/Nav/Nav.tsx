@@ -1,16 +1,16 @@
-import React from 'react';
-import styled from 'styled-components';
-import { ReactComponent as Basket } from '../../../img/basket-icon.svg';
-import { ReactComponent as Heart } from '../../../img/icon-heart.svg';
-import { ReactComponent as Search } from '../../../img/icon-search.svg';
-import { ReactComponent as User } from '../../../img/icon-user.svg';
-import { ReactComponent as Logo } from '../../../img/logo.svg';
+import React from 'react'
+import styled from 'styled-components'
+import { ReactComponent as Basket } from '../../../../img/basket-icon.svg'
+import { ReactComponent as Heart } from '../../../../img/icon-heart.svg'
+import { ReactComponent as Search } from '../../../../img/icon-search.svg'
+import { ReactComponent as User } from '../../../../img/icon-user.svg'
+import { ReactComponent as Logo } from '../../../../img/logo.svg'
 
 const StyledNav = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
-`;
+`
 
 const StyledPageList = styled.ul`
   display: flex;
@@ -33,14 +33,14 @@ const StyledPageList = styled.ul`
       text-transform: uppercase;
     }
   }
-`;
+`
 
 const StyledLogo = styled(Logo)`
   width: 154px;
   height: 47px;
   margin-left: -160px;
   cursor: pointer;
-`;
+`
 
 const StyledIconList = styled.ul`
   display: flex;
@@ -66,20 +66,20 @@ const StyledIconList = styled.ul`
       }
     }
   }
-`;
+`
 
 const Nav: React.FC = () => {
   return (
     <StyledNav>
       <StyledPageList>
         <li>
-          <a href="##">Каталог</a>
+          <a href='##'>Каталог</a>
         </li>
         <li>
-          <a href="##">Контакты</a>
+          <a href='##'>Контакты</a>
         </li>
         <li>
-          <a href="##">Доставка</a>
+          <a href='##'>Доставка</a>
         </li>
       </StyledPageList>
       <StyledLogo />
@@ -98,7 +98,7 @@ const Nav: React.FC = () => {
         </li>
       </StyledIconList>
     </StyledNav>
-  );
-};
+  )
+}
 
-export default Nav;
+export default Nav
