@@ -124,6 +124,7 @@ const GlobalStyles = createGlobalStyle`
 
   h2 {
     font-size: 48px;
+    line-height: 62px;
   }
   
   a {
@@ -146,6 +147,11 @@ const GlobalStyles = createGlobalStyle`
     position: relative;
     max-width: 1440px;
     margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  .containerFluid {
+    position: relative;
     padding: 0 40px;
   }
 

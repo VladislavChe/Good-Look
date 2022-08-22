@@ -4,6 +4,7 @@ import styled from 'styled-components'
 type StyledProps = {
   uppercase: boolean
   marginTop: string
+  variant: string | undefined
 }
 
 const StyledButton = styled.button<StyledProps>`
@@ -14,9 +15,21 @@ const StyledButton = styled.button<StyledProps>`
   margin-top: ${(props) => props.marginTop};
 
   text-transform: ${(props) => (props.uppercase ? 'uppercase' : 'none')};
+  color: ${(props) =>
+    props.variant === 'white'
+      ? props.theme.colors.white
+      : props.variant === 'black'
+      ? props.theme.colors.black
+      : ''};
 
   background: none;
-  border: 1px solid ${(props) => props.theme.colors.black};
+  border: 1px solid
+    ${(props) =>
+      props.variant === 'white'
+        ? props.theme.colors.white
+        : props.variant === 'black'
+        ? props.theme.colors.black
+        : ''};
   transition: ${(props) => props.theme.other.time};
 
   &:hover {
@@ -36,12 +49,13 @@ interface BtnProps {
   btnText: string
   uppercase: boolean
   marginTop: string
+  variant: string
 }
 
-const Button: React.FC<BtnProps> = ({ btnText, uppercase, marginTop }) => {
+const Button: React.FC<BtnProps> = ({ btnText, uppercase, marginTop, variant }) => {
   return (
     <>
-      <StyledButton uppercase={uppercase} marginTop={marginTop}>
+      <StyledButton uppercase={uppercase} marginTop={marginTop} variant={variant}>
         {btnText}
       </StyledButton>
     </>

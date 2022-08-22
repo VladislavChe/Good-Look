@@ -1,6 +1,9 @@
 import styled from 'styled-components'
+import BestSalesSection from './components/Section/BestSalesSection/BestSalesSection'
 import DiscountSection from './components/Section/DiscountSection/DiscountSection'
+import FooterSection from './components/Section/FooterSection/FooterSection'
 import HeaderSection from './components/Section/HeaderSection/HeaderSection'
+import MoreInfoSection from './components/Section/MoreInfoSection/MoreInfoSection'
 import NewCollectionSection from './components/Section/NewCollectionSection/NewCollectionSection'
 
 const StyledBgEllipse = styled.img`
@@ -31,13 +34,41 @@ const StyledNewCollectionSection = styled.section`
   }
 `
 const StyledDiscountSection = styled.section`
-  padding-top: 146px;
-  padding-bottom: 140px;
-  padding-left: 40px;
+  display: flex;
+  align-items: center;
+  max-width: 1360px;
+  padding-left: 80px;
+  padding-right: 40px;
+  margin: 0 auto;
+  min-height: 562px;
 
   background-image: url(${require('./img/bgDiscountSection.jpg')});
   background-position: center;
   background-repeat: no-repeat;
+`
+
+const StyledBestSalesSection = styled.section`
+  margin-top: 150px;
+
+  .bgElipse {
+    top: -314px;
+    left: -348px;
+  }
+`
+
+const StyledMoreInfoSection = styled.section`
+  margin-top: 150px;
+
+  overflow: hidden;
+
+  .bgElipse {
+    bottom: -314px;
+    right: -348px;
+  }
+`
+
+const StyledFooterSection = styled.footer`
+  margin-top: 150px;
 `
 
 function App() {
@@ -65,11 +96,36 @@ function App() {
           </div>
         </StyledNewCollectionSection>
         <StyledDiscountSection id='discountSection' className='discountSection'>
-          <div className='container'>
+          <div className='containerFluid'>
             <DiscountSection />
           </div>
         </StyledDiscountSection>
+        <StyledBestSalesSection id='bestSalesSection' className='bestSalesSection'>
+          <div className='container'>
+            <StyledBgEllipse
+              className='bgElipse'
+              src={require('../src/img/bg-ellipse.png')}
+              alt='copyright-icon'
+            />
+            <BestSalesSection />
+          </div>
+        </StyledBestSalesSection>
+        <StyledMoreInfoSection id='moreInfoSection' className='moreInfoSection'>
+          <div className='container'>
+            <StyledBgEllipse
+              className='bgElipse'
+              src={require('../src/img/bg-ellipse.png')}
+              alt='copyright-icon'
+            />
+            <MoreInfoSection />
+          </div>
+        </StyledMoreInfoSection>
       </main>
+      <StyledFooterSection>
+        <div className='container'>
+          <FooterSection />
+        </div>
+      </StyledFooterSection>
     </div>
   )
 }

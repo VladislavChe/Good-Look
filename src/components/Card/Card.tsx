@@ -1,12 +1,28 @@
 import styled from 'styled-components'
+import { ReactComponent as Heart } from '../../img/icon-heart.svg'
 import { ICard } from '../../Types/Types'
 import { toLocal } from '../_tools/Tools'
 import Button from '../_Utils/Button'
 
 const StyledTop = styled.div`
+  position: relative;
   img {
     width: 433px;
     height: 513px;
+  }
+
+  svg {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+
+    cursor: pointer;
+    transition: ${(props) => props.theme.other.time};
+
+    &:hover {
+      color: ${(props) => props.theme.colors.brown};
+      ${(props) => props.theme.other.time};
+    }
   }
 `
 
@@ -49,12 +65,13 @@ const Card: React.FC<CardProps> = ({ id, img, text, price }) => {
     <>
       <StyledTop>
         <img src={img} alt='product' />
+        <Heart />
       </StyledTop>
       <StyledBottom>
         <StyledText>{text}</StyledText>
         <StyledPriceBlock>
           <span>{modifedPrice} ₽</span>
-          <Button btnText='В корзину' uppercase={false} marginTop='0px' />
+          <Button btnText='В корзину' uppercase={false} marginTop='0px' variant='black' />
         </StyledPriceBlock>
       </StyledBottom>
     </>

@@ -33,7 +33,7 @@ const HeaderSection: React.FC = () => {
       <StyledFlexBox>
         <StyledOffer>
           <h1>Натуральная органическая косметика</h1>
-          <Button btnText='В каталог' uppercase={true} marginTop={'50px'} />
+          <Button btnText='В каталог' uppercase={true} marginTop={'50px'} variant='black' />
           <StyledPhotoCream>
             <img src={require('../../../img/offer-cream.jpg')} alt='Cream' />
           </StyledPhotoCream>
