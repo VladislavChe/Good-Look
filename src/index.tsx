@@ -15,6 +15,9 @@ import CenturyGothicWoff from '../src/fonts/CenturyGothic/CenturyGothic.woff'
 import CenturyGothicTtf from '../src/fonts/CenturyGothic/CenturyGothic.ttf'
 import App from './App'
 
+import { Provider } from 'react-redux'
+import store from './Redux/store'
+
 const theme: DefaultTheme = {
   fonts: {
     mainFont: 'CenturyGothic',
@@ -109,6 +112,7 @@ const GlobalStyles = createGlobalStyle`
     font-weight: 400;
     line-height: 1;
     color: ${theme.colors.black};
+    overflow-x: hidden;
   }
 
   h1,
@@ -162,6 +166,8 @@ root.render(
   <ThemeProvider theme={theme}>
     <Normalize />
     <GlobalStyles />
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </ThemeProvider>,
 )

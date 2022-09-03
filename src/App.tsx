@@ -59,10 +59,8 @@ const StyledBestSalesSection = styled.section`
 const StyledMoreInfoSection = styled.section`
   margin-top: 150px;
 
-  overflow: hidden;
-
   .bgElipse {
-    bottom: -314px;
+    bottom: -426px;
     right: -348px;
   }
 `

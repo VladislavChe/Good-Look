@@ -86,7 +86,9 @@ const StyledSocialIconItem = styled.li`
     &:last-child {
       margin-right: 0px;
     }
+  }
 
+  .socIcon {
     path {
       transition: ${(props) => props.theme.other.time};
     }
@@ -97,6 +99,23 @@ const StyledSocialIconItem = styled.li`
 
         transition: ${(props) => props.theme.other.time};
       }
+    }
+  }
+`
+
+const StyledVkIcon = styled(Vk)`
+  .vkIcon {
+    transition: ${(props) => props.theme.other.time};
+  }
+
+  &:hover {
+    .vkIcon {
+      fill: ${(props) => props.theme.colors.brown};
+
+      transition: ${(props) => props.theme.other.time};
+    }
+    path {
+      fill: white;
     }
   }
 `
@@ -127,7 +146,7 @@ const FooterSection: React.FC = () => {
           <StyledSocialIconItem>
             <Tg />
             <Inst />
-            <Vk />
+            <StyledVkIcon></StyledVkIcon>
           </StyledSocialIconItem>
         </StyledSocialList>
       </StyledContentWrapp>

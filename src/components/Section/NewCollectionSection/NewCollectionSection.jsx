@@ -1,6 +1,7 @@
-import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import styled from 'styled-components'
 import Card from '../../Card/Card'
+import { changeText } from '../NewCollectionSection/SliceNewCollectionSection'
 
 const StyledTitle = styled.h2`
   text-align: center;
@@ -20,33 +21,19 @@ const StyledCollectionItem = styled.li`
   }
 `
 
-const items = [
-  {
-    id: 1,
-    img: `${require('../../../img/new-collection-pic-1.jpg')}`,
-    text: 'Увлажняющий крем для лица с церамидами',
-    price: 2800,
-  },
-  {
-    id: 2,
-    img: `${require('../../../img/new-collection-pic-2.jpg')}`,
-    text: 'Кремовая сыворотка для лица с гиалуроновой кислотой',
-    price: 2500,
-  },
-  {
-    id: 3,
-    img: `${require('../../../img/new-collection-pic-3.jpg')}`,
-    text: 'Крем для контура глаз с эффектом лифтинга',
-    price: 2000,
-  },
-]
+const NewCollectionSection = () => {
+  const items2 = useSelector((state) => state.newCollectionItems.items)
+  const text = useSelector((state) => state.newCollectionItems.text)
 
-const NewCollectionSection: React.FC = () => {
+  const dispatch = useDispatch()
+
   return (
     <>
+      <div>{text}</div>
+      <button onClick={() => dispatch(changeText('RAbotAeT'))}>Click</button>
       <StyledTitle>Новая коллекция</StyledTitle>
       <StyledCollectionList>
-        {items.map((item) => {
+        {items2.map((item) => {
           return (
             <StyledCollectionItem key={`${item} ${item.id}`}>
               <Card id={item.id} img={item.img} text={item.text} price={item.price} />

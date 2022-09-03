@@ -50,13 +50,6 @@ const StyledImgSecond = styled.img`
 `
 const StyledImgThird = styled.img``
 
-const StyledBottomLine = styled.div`
-  height: 1px;
-  width: 100%;
-
-  background-color: ${(props) => props.theme.colors.black};
-`
-
 const MoreInfoSection: React.FC = () => {
   return (
     <StyledFlexBox>
