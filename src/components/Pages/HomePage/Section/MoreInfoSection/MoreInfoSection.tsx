@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import Button from '../../_Utils/Button'
+import Button from '../../../../_Utils/Button'
 
 const StyledFlexBox = styled.div`
   display: flex;
@@ -62,12 +62,12 @@ const MoreInfoSection: React.FC = () => {
         <StyledImgWrapp>
           <StyledImgFirst
             className='bgElipse'
-            src={require('../../../img/more-info-img-1.jpg')}
+            src={require('../../../../../img/more-info-img-1.jpg')}
             alt='copyright-icon'
           />
           <StyledImgSecond
             className='bgElipse'
-            src={require('../../../img/more-info-img-2.jpg')}
+            src={require('../../../../../img/more-info-img-2.jpg')}
             alt='copyright-icon'
           />
         </StyledImgWrapp>
@@ -75,7 +75,7 @@ const MoreInfoSection: React.FC = () => {
       <StyledRightPhoto>
         <StyledImgThird
           className='bgElipse'
-          src={require('../../../img/more-info-img-3.jpg')}
+          src={require('../../../../../img/more-info-img-3.jpg')}
           alt='copyright-icon'
         />
       </StyledRightPhoto>

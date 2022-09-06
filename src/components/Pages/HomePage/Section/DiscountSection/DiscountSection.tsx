@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import Button from '../../_Utils/Button'
+import Button from '../../../../_Utils/Button'
 
 const StyledTitle = styled.h2`
   max-width: 700px;

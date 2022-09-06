@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import Button from '../../_Utils/Button'
+import Button from '../../../../_Utils/Button'
 import Nav from './Nav/Nav'
 
 const StyledFlexBox = styled.div`
@@ -35,11 +35,11 @@ const HeaderSection: React.FC = () => {
           <h1>Натуральная органическая косметика</h1>
           <Button btnText='В каталог' uppercase={true} marginTop={'50px'} variant='black' />
           <StyledPhotoCream>
-            <img src={require('../../../img/offer-cream.jpg')} alt='Cream' />
+            <img src={require('../../../../../img/offer-cream.jpg')} alt='Cream' />
           </StyledPhotoCream>
         </StyledOffer>
         <StyledPhotoFace>
-          <img src={require('../../../img/offer-face.jpg')} alt='Creame on Face' />
+          <img src={require('../../../../../img/offer-face.jpg')} alt='Creame on Face' />
         </StyledPhotoFace>
       </StyledFlexBox>
     </header>

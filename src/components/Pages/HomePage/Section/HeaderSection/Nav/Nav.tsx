@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
-import { ReactComponent as Basket } from '../../../../img/basket-icon.svg'
-import { ReactComponent as Heart } from '../../../../img/icon-heart.svg'
-import { ReactComponent as Search } from '../../../../img/icon-search.svg'
-import { ReactComponent as User } from '../../../../img/icon-user.svg'
-import { ReactComponent as Logo } from '../../../../img/logo.svg'
+import { ReactComponent as Basket } from '../../../../../../img/basket-icon.svg'
+import { ReactComponent as Heart } from '../../../../../../img/icon-heart.svg'
+import { ReactComponent as Search } from '../../../../../../img/icon-search.svg'
+import { ReactComponent as User } from '../../../../../../img/icon-user.svg'
+import { ReactComponent as Logo } from '../../../../../../img/logo.svg'
 
 const StyledNav = styled.nav`
   display: flex;

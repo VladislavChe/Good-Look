@@ -1,10 +1,10 @@
 import styled from 'styled-components'
-import BestSalesSection from './components/Section/BestSalesSection/BestSalesSection'
-import DiscountSection from './components/Section/DiscountSection/DiscountSection'
-import FooterSection from './components/Section/FooterSection/FooterSection'
-import HeaderSection from './components/Section/HeaderSection/HeaderSection'
-import MoreInfoSection from './components/Section/MoreInfoSection/MoreInfoSection'
-import NewCollectionSection from './components/Section/NewCollectionSection/NewCollectionSection'
+import BestSalesSection from './components/Pages/HomePage/Section/BestSalesSection/BestSalesSection'
+import DiscountSection from './components/Pages/HomePage/Section/DiscountSection/DiscountSection'
+import FooterSection from './components/Pages/HomePage/Section/FooterSection/FooterSection'
+import HeaderSection from './components/Pages/HomePage/Section/HeaderSection/HeaderSection'
+import MoreInfoSection from './components/Pages/HomePage/Section/MoreInfoSection/MoreInfoSection'
+import NewCollectionSection from './components/Pages/HomePage/Section/NewCollectionSection/NewCollectionSection'
 
 const StyledBgEllipse = styled.img`
   position: absolute;
