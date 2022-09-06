@@ -20,10 +20,24 @@ const StyledPhotoCream = styled.div`
 `
 
 const StyledPhotoFace = styled.div`
-  max-width: 665px;
-  max-height: 750px;
-  min-width: 665px;
-  min-height: 750px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  width: 43%;
+
+  img {
+    width: 100%;
+    height: auto;
+    max-width: 665px;
+    max-height: 750px;
+  }
+
+  @media ${(props) => props.theme.media.desktopSmall} {
+    img {
+      max-width: 100%;
+      max-height: auto;
+    }
+  }
 `
 
 const HeaderSection: React.FC = () => {
@@ -39,7 +53,7 @@ const HeaderSection: React.FC = () => {
           </StyledPhotoCream>
         </StyledOffer>
         <StyledPhotoFace>
-          <img src={require('../../../../../img/offer-face.jpg')} alt='Creame on Face' />
+          <img src={require('../../../../../img/offer-face.jpg')} alt='Cream on Face' />
         </StyledPhotoFace>
       </StyledFlexBox>
     </header>

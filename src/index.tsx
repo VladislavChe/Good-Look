@@ -18,7 +18,7 @@ import App from './App'
 import { Provider } from 'react-redux'
 import { store } from './Redux/store'
 
-const theme: DefaultTheme = {
+const defaultTheme: DefaultTheme = {
   fonts: {
     mainFont: 'CenturyGothic',
     titleFont: 'Lighthaus',
@@ -32,12 +32,28 @@ const theme: DefaultTheme = {
     browner: '#AF632D',
   },
   media: {
-    phone: '(max-width: 425px)',
-    tablet: '(max-width: 768px) and (min-width: 425px)',
+    desktop: '(max-width: 2000px)',
+    desktopSmall: '(max-width: 1200px)',
+    tablet: '(max-width: 992px)',
+    mobile: '(max-width: 768px)',
+    mobileSmall: '(max-width: 576px)',
   },
   other: {
     time: 'all 0.3s ease-in-out',
   },
+}
+
+const darkTheme: DefaultTheme = {
+  fonts: { ...defaultTheme.fonts },
+  colors: {
+    black: '#454545',
+    gray: '#848484',
+    white: '#ffff',
+    brown: 'blue',
+    browner: '#AF632D',
+  },
+  media: { ...defaultTheme.media },
+  other: { ...defaultTheme.other },
 }
 
 const GlobalStyles = createGlobalStyle`
@@ -88,7 +104,7 @@ const GlobalStyles = createGlobalStyle`
     display: block;
   }
   body {
-    
+    min-width: 320px;
   }
   ol, ul {
     list-style: none;
@@ -107,17 +123,17 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    font-family: ${theme.fonts.mainFont};
-    font-size: ${theme.fonts.mainFontSize};
+    font-family: ${defaultTheme.fonts.mainFont};
+    font-size: ${defaultTheme.fonts.mainFontSize};
     font-weight: 400;
     line-height: 1;
-    color: ${theme.colors.black};
+    color: ${defaultTheme.colors.black};
     overflow-x: hidden;
   }
 
   h1,
   h2 {
-    font-family: ${theme.fonts.titleFont};
+    font-family: ${defaultTheme.fonts.titleFont};
     text-transform: uppercase
   }
   
@@ -135,7 +151,7 @@ const GlobalStyles = createGlobalStyle`
     color: inherit;
     list-style-type: none;
     text-decoration: none;
-    transition: ${theme.other.time}
+    transition: ${defaultTheme.other.time}
   }
 
   img {
@@ -161,9 +177,11 @@ const GlobalStyles = createGlobalStyle`
 
 `
 
+const def = false
+
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
-  <ThemeProvider theme={theme}>
+  <ThemeProvider theme={def ? defaultTheme : darkTheme}>
     <Normalize />
     <GlobalStyles />
     <Provider store={store}>

@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import { ReactComponent as Basket } from '../../../../../../img/basket-icon.svg'
 import { ReactComponent as Heart } from '../../../../../../img/icon-heart.svg'
 import { ReactComponent as Search } from '../../../../../../img/icon-search.svg'
-import { ReactComponent as User } from '../../../../../../img/icon-user.svg'
 import { ReactComponent as Logo } from '../../../../../../img/logo.svg'
 
 const StyledNav = styled.nav`
@@ -31,6 +30,10 @@ const StyledPageList = styled.ul`
     a {
       transition: ${(props) => props.theme.other.time};
       text-transform: uppercase;
+    }
+
+    @media ${(props) => props.theme.media.tablet} {
+      display: none;
     }
   }
 `
@@ -84,9 +87,6 @@ const Nav: React.FC = () => {
       </StyledPageList>
       <StyledLogo />
       <StyledIconList>
-        <li>
-          <User />
-        </li>
         <li>
           <Search />
         </li>

@@ -58,6 +58,8 @@ const StyledBestSalesSection = styled.section`
 
 const StyledMoreInfoSection = styled.section`
   margin-top: 150px;
+  padding-bottom: 150px;
+  overflow: hidden;
 
   .bgElipse {
     bottom: -426px;
@@ -65,9 +67,7 @@ const StyledMoreInfoSection = styled.section`
   }
 `
 
-const StyledFooterSection = styled.footer`
-  margin-top: 150px;
-`
+const StyledFooterSection = styled.footer``
 
 function App() {
   return (

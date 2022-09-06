@@ -12,8 +12,11 @@ export interface ITheme {
     browner: string
   }
   media: {
-    phone: string
+    desktop: string
+    desktopSmall: string
     tablet: string
+    mobile: string
+    mobileSmall: string
   }
   other: {
     time: string
