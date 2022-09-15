@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { ReactComponent as Inst } from '../../../../../img/inst-icon.svg'
-import { ReactComponent as Logo } from '../../../../../img/logo.svg'
-import { ReactComponent as Tg } from '../../../../../img/telegram-icon.svg'
-import { ReactComponent as Vk } from '../../../../../img/vk-icon.svg'
+import { ReactComponent as Inst } from '../../img/inst-icon.svg'
+import { ReactComponent as Logo } from '../../img/logo.svg'
+import { ReactComponent as Tg } from '../../img/telegram-icon.svg'
+import { ReactComponent as Vk } from '../../img/vk-icon.svg'
 
 const StyledSectionWrapp = styled.div`
   padding-top: 70px;

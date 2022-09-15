@@ -37,6 +37,7 @@ const defaultTheme: DefaultTheme = {
     tablet: '(max-width: 992px)',
     mobile: '(max-width: 768px)',
     mobileSmall: '(max-width: 576px)',
+    mobileExtraSmall: '(max-width: 350px)',
   },
   other: {
     time: 'all 0.3s ease-in-out',
@@ -164,10 +165,13 @@ const GlobalStyles = createGlobalStyle`
   }
 
   .container {
-    position: relative;
     max-width: 1440px;
     margin: 0 auto;
     padding: 0 40px;
+
+    @media ${(props) => props.theme.media.tablet} {
+    padding: 0 20px;
+  }
   }
 
   .containerFluid {
@@ -177,11 +181,9 @@ const GlobalStyles = createGlobalStyle`
 
 `
 
-const def = false
-
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
-  <ThemeProvider theme={def ? defaultTheme : darkTheme}>
+  <ThemeProvider theme={defaultTheme}>
     <Normalize />
     <GlobalStyles />
     <Provider store={store}>

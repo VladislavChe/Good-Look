@@ -1,10 +1,15 @@
 import styled from 'styled-components'
+import FooterSection from './components/FooterSection/FooterSection'
+import HeaderSection from './components/HeaderSection/HeaderSection'
 import BestSalesSection from './components/Pages/HomePage/Section/BestSalesSection/BestSalesSection'
 import DiscountSection from './components/Pages/HomePage/Section/DiscountSection/DiscountSection'
-import FooterSection from './components/Pages/HomePage/Section/FooterSection/FooterSection'
-import HeaderSection from './components/Pages/HomePage/Section/HeaderSection/HeaderSection'
 import MoreInfoSection from './components/Pages/HomePage/Section/MoreInfoSection/MoreInfoSection'
 import NewCollectionSection from './components/Pages/HomePage/Section/NewCollectionSection/NewCollectionSection'
+import OfferSection from './components/Pages/HomePage/Section/OfferSection/OfferSection'
+
+const StyledApp = styled.div`
+  overflow-x: hidden;
+`
 
 const StyledBgEllipse = styled.img`
   position: absolute;
@@ -15,6 +20,7 @@ const StyledBgEllipse = styled.img`
 `
 
 const StyledHeaderSection = styled.header`
+  position: relative;
   padding-top: 35px;
 
   .bgElipse {
@@ -23,7 +29,10 @@ const StyledHeaderSection = styled.header`
   }
 `
 
+const StyledOfferSection = styled.section``
+
 const StyledNewCollectionSection = styled.section`
+  display: none;
   margin-top: 218px;
   padding-bottom: 150px;
   overflow: hidden;
@@ -34,7 +43,8 @@ const StyledNewCollectionSection = styled.section`
   }
 `
 const StyledDiscountSection = styled.section`
-  display: flex;
+  display: none;
+  /* display: flex; */
   align-items: center;
   max-width: 1360px;
   padding-left: 80px;
@@ -48,6 +58,7 @@ const StyledDiscountSection = styled.section`
 `
 
 const StyledBestSalesSection = styled.section`
+  display: none;
   margin-top: 150px;
 
   .bgElipse {
@@ -57,6 +68,7 @@ const StyledBestSalesSection = styled.section`
 `
 
 const StyledMoreInfoSection = styled.section`
+  display: none;
   margin-top: 150px;
   padding-bottom: 150px;
   overflow: hidden;
@@ -67,22 +79,29 @@ const StyledMoreInfoSection = styled.section`
   }
 `
 
-const StyledFooterSection = styled.footer``
+const StyledFooterSection = styled.footer`
+  display: none;
+`
 
 function App() {
   return (
-    <div className='App'>
+    <StyledApp className='App'>
       <StyledHeaderSection id='header'>
+        <StyledBgEllipse
+          className='bgElipse'
+          src={require('../src/img/bg-ellipse.png')}
+          alt='copyright-icon'
+        />
         <div className='container'>
-          <StyledBgEllipse
-            className='bgElipse'
-            src={require('../src/img/bg-ellipse.png')}
-            alt='copyright-icon'
-          />
           <HeaderSection />
         </div>
       </StyledHeaderSection>
       <main id='main'>
+        <StyledOfferSection id='offerSection' className='offerSection'>
+          <div className='container'>
+            <OfferSection />
+          </div>
+        </StyledOfferSection>
         <StyledNewCollectionSection id='newCollectionSection' className='newCollectionSection'>
           <div className='container'>
             <NewCollectionSection />
@@ -124,7 +143,7 @@ function App() {
           <FooterSection />
         </div>
       </StyledFooterSection>
-    </div>
+    </StyledApp>
   )
 }
 

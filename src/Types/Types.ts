@@ -17,6 +17,7 @@ export interface ITheme {
     tablet: string
     mobile: string
     mobileSmall: string
+    mobileExtraSmall: string
   }
   other: {
     time: string

@@ -1,22 +1,64 @@
 import React from 'react'
 import styled from 'styled-components'
 import Button from '../../../../_Utils/Button'
-import Nav from './Nav/Nav'
 
 const StyledFlexBox = styled.div`
   display: flex;
   justify-content: space-between;
   margin-top: 81px;
+
+  @media ${(props) => props.theme.media.tablet} {
+    flex-direction: column;
+    margin-top: 40px;
+  }
 `
 
 const StyledOffer = styled.div`
-  max-width: 57%;
+  width: 57%;
+
+  @media ${(props) => props.theme.media.tablet} {
+    width: 100%;
+    order: 2;
+
+    button {
+      margin: 50px auto 0;
+    }
+  }
+
+  @media ${(props) => props.theme.media.mobileSmall} {
+    button {
+      margin: 9px auto 0;
+    }
+  }
+`
+
+const StyledTitle = styled.h1`
+  @media ${(props) => props.theme.media.desktopSmall} {
+    font-size: 60px;
+  }
+
+  @media ${(props) => props.theme.media.tablet} {
+    margin-top: 50px;
+    text-align: center;
+  }
+
+  @media ${(props) => props.theme.media.mobileSmall} {
+    font-size: 36px;
+  }
 `
 
 const StyledPhotoCream = styled.div`
-  width: 432px;
-  height: 332px;
   margin-top: 90px;
+  max-width: 50%;
+
+  img {
+    max-width: 432px;
+    height: auto;
+  }
+
+  @media ${(props) => props.theme.media.mobileSmall} {
+    margin-top: 31px;
+  }
 `
 
 const StyledPhotoFace = styled.div`
@@ -29,7 +71,6 @@ const StyledPhotoFace = styled.div`
     width: 100%;
     height: auto;
     max-width: 665px;
-    max-height: 750px;
   }
 
   @media ${(props) => props.theme.media.desktopSmall} {
@@ -38,15 +79,19 @@ const StyledPhotoFace = styled.div`
       max-height: auto;
     }
   }
+
+  @media ${(props) => props.theme.media.tablet} {
+    width: 100%;
+    order: 1;
+  }
 `
 
-const HeaderSection: React.FC = () => {
+const OfferSection: React.FC = () => {
   return (
-    <header>
-      <Nav />
+    <>
       <StyledFlexBox>
         <StyledOffer>
-          <h1>Натуральная органическая косметика</h1>
+          <StyledTitle>Натуральная органическая косметика</StyledTitle>
           <Button btnText='В каталог' uppercase={true} marginTop={'50px'} variant='black' />
           <StyledPhotoCream>
             <img src={require('../../../../../img/offer-cream.jpg')} alt='Cream' />
@@ -56,8 +101,8 @@ const HeaderSection: React.FC = () => {
           <img src={require('../../../../../img/offer-face.jpg')} alt='Cream on Face' />
         </StyledPhotoFace>
       </StyledFlexBox>
-    </header>
+    </>
   )
 }
 
-export default HeaderSection
+export default OfferSection
